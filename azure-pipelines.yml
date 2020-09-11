@@ -36,5 +36,6 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'test'
-    projects: '../TicTacToeTests/TicTacToeTests.csproj'
+    projects: '**/*TicTacToeTests/*.csproj'
+    configuration: '--self-contained true -r win-x86 --configuration $(buildConfiguration)'
     testRunTitle: 'Performing unit testing'
