@@ -14,5 +14,11 @@ namespace TicTacToe.Tests
         {
             Assert.IsTrue(true);
         }
+
+        [TestMethod()]
+        public void Testtest2()
+        {
+            Assert.IsTrue(false);
+        }
     }
 }
