@@ -21,6 +21,12 @@ steps:
   inputs:
     restoreSolution: '$(solution)'
 
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'test'
+    projects: '../TicTacToeTests/TicTacToeTests.csproj'
+    testRunTitle: 'Performing unit testing'
+
 - task: VSBuild@1
   inputs:
     solution: '$(solution)'
@@ -32,9 +38,3 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
-
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'test'
-    projects: '**/*ContainerTests/TicTacToeTests/*.csproj'
-    testRunTitle: 'Performing unit testing'
